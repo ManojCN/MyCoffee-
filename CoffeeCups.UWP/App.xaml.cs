@@ -14,6 +14,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes; 
 
 namespace CoffeeCups.UWP
 {
@@ -28,6 +31,7 @@ namespace CoffeeCups.UWP
         /// </summary>
         public App()
         {
+            MobileCenter.Start(typeof(Analytics), typeof(Crashes));    
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

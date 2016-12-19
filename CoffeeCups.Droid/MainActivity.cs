@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Xamarin.Forms.Platform.Android;
+using Microsoft.Azure.Mobile;
 
 namespace CoffeeCups.Droid
 {
@@ -10,7 +11,7 @@ namespace CoffeeCups.Droid
     public class MainActivity : FormsAppCompatActivity
 	{
 		protected override void OnCreate (Bundle bundle)
-		{
+		{ 
 
             ToolbarResource = Resource.Layout.toolbar;
             TabLayoutResource = Resource.Layout.tabs;
@@ -28,7 +29,7 @@ namespace CoffeeCups.Droid
             }
             };
 #endif
-
+            MobileCenter.Configure("1d43bce7-b21b-4128-91c8-e50153b99e35");
             LoadApplication (new App ());
 		}
 	}
